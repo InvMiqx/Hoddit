@@ -6,8 +6,7 @@ const RedditPosts = () => {
 
   useEffect(async () =>{
 
-
-    const result = await fetch("https://hoddit-api.herokuapp.com/api/p?limit=100", {
+    const result = await fetch("/api/query?limit=100", {
       origin: "a",
       method: 'GET',
       headers: {'Content-Type':'application/json'},
