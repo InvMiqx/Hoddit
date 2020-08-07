@@ -23,6 +23,8 @@ var postSchema = new mongoose.Schema({
   flipper: Boolean
 });
 
+var post = mongoose.model('Post', postSchema);
+
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 
