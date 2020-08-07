@@ -2,7 +2,7 @@ import React from 'react';
 
 const Postrow = () => {
   return (
-    <div></div>
+    <li>{this.props.title}</li>
   );
 };
 

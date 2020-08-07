@@ -2,31 +2,32 @@ import React, { useState, useEffect } from 'react';
 import Postrow from './Postrow';
 
 const RedditPosts = () => {
-  const [data, setData] = useState({ hits: [] });
+  const [data, setData] = useState("");
 
   useEffect(async () =>{
-
-    const result = await fetch("/api/query?limit=100");
-
+    // const result = await fetch("/api/query?limit=100");
+    const result = await fetch("/testJSON");
     const result_json = await result.json();
-
     setData(result_json);
-
-    // setData(result);
-    // console.log(result);
-    // console.log(result);
   }, []);
+
+  const renderIndividualRow = (post) => {
+    return <Postrow
+      key={post.title}
+      title={post.title}
+    />
+  }
+
+  const renderCustomRows = () => {
+    let redditData = data.map(renderIndividualRow());
+    return redditData;
+  }
 
   return (
     <ul>
-      {data.hits.map(item => (
-        <li key={item.title}>
-          {item.title}
-        </li>
-      ))}
+    <li>list</li>
+      {renderCustomRows}
     </ul>
-
-    <div></div>
   );
 };
 
