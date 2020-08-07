@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 const path = require('path');
 const cors = require('cors');
 const app = express();
@@ -27,6 +28,7 @@ var post = mongoose.model('Post', postSchema);
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/ping', function (req, res) {
  return res.send('pong');
