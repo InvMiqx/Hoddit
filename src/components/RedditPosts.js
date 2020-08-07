@@ -6,11 +6,13 @@ const RedditPosts = () => {
 
   useEffect(async () =>{
 
-    const result = await fetch("/api/query?limit=100");
+    // const result = await fetch("/api/query?limit=100");
+
+    fetch("/api/query?limit=100").then(response => response.json()).then(data => console.log(data));
 
     // setData(result);
     // console.log(result);
-    console.log(result);
+    // console.log(result);
   }, []);
 
   return (
