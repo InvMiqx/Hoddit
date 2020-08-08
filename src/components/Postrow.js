@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Postrow = () => {
+const Postrow = (props) => {
   return (
-    <li>{this.props.title}</li>
+    <li>{props.title}</li>
   );
 };
 

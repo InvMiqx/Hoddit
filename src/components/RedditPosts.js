@@ -9,7 +9,7 @@ const RedditPosts = () => {
     const result_json = await result.json();
     setData(result_json);
 
-    // const result = JSON.stringify({"_id":"5f279f3d0ef27d001775bd74","ups":141670,"title":"Who knows why?","created_utc":1596391948,"url":"https://i.redd.it/8l82z1uarme51.png","subreddit":"memes","rate":211.2270761890562,"flipper":false});
+    // const result = JSON.parse(JSON.stringify({"_id":"5f279f3d0ef27d001775bd74","ups":141670,"title":"Who knows why?","created_utc":1596391948,"url":"https://i.redd.it/8l82z1uarme51.png","subreddit":"memes","rate":211.2270761890562,"flipper":false}));
     // setData(result);
 
   }, []);
@@ -27,11 +27,9 @@ const RedditPosts = () => {
   }
 
   const renderCustomRows = () => {
-    let b = JSON.parse(data);
-    console.log(b);
 
-    // let redditData = data.map(renderIndividualRow());
-    // return redditData;
+    let redditData = data.map(renderIndividualRow());
+    return redditData;
   }
 
   return (
