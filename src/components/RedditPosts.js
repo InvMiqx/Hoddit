@@ -9,7 +9,7 @@ const RedditPosts = () => {
     const result_json = await result.json();
     setData(result_json);
 
-    // const result = JSON.parse(JSON.stringify({"_id":"5f279f3d0ef27d001775bd74","ups":141670,"title":"Who knows why?","created_utc":1596391948,"url":"https://i.redd.it/8l82z1uarme51.png","subreddit":"memes","rate":211.2270761890562,"flipper":false}));
+    // const result = JSON.parse(JSON.stringify({"_id":"5f279f3d0ef27d001775bd74","ups":141670,"title":"Who knows why?","created_utc":1596391948,"url":"https://i.redd.it/8l82z1uarme51.png","subreddit":"memes","rate":211.2270761890562,"flipper":false},{"_id":"5f279f3d0ef27d001775c0fa","ups":156527,"title":"Fuck Nepotism","created_utc":1596381721,"url":"https://i.imgur.com/JEu4eZS.gifv","subreddit":"dankmemes","rate":186.08690483266957,"flipper":false}));
     // setData(result);
 
   }, []);
@@ -28,8 +28,12 @@ const RedditPosts = () => {
 
   const renderCustomRows = () => {
 
-    let redditData = data.map(renderIndividualRow());
-    return redditData;
+    data.forEach(element=>{
+      console.log("FUCK");
+    });
+
+    // let redditData = data.map(renderIndividualRow());
+    // return redditData;
   }
 
   return (
