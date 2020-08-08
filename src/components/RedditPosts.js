@@ -28,9 +28,16 @@ const RedditPosts = () => {
 
   const renderCustomRows = () => {
 
-    data.forEach(element=>{
-      console.log("FUCK");
-    });
+    console.log(data);
+
+    // let postInfo;
+    //
+    // data.forEach(element=>{
+    //   console.log("FUCK");
+    //   postInfo+=renderIndividualRow(element);
+    // });
+    //
+    // return postInfo;
 
     // let redditData = data.map(renderIndividualRow());
     // return redditData;
