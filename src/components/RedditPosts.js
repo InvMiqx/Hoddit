@@ -15,6 +15,11 @@ const RedditPosts = () => {
     return <Postrow
       key={post.title}
       title={post.title}
+      ups={post.ups}
+      created_utc={post.created_utc}
+      url={post.url}
+      subreddit={post.subreddit}
+      rate={post.rate}
     />
   }
 
@@ -25,8 +30,7 @@ const RedditPosts = () => {
 
   return (
     <ul>
-    <li>list</li>
-      {renderCustomRows}
+      {renderCustomRows()}
     </ul>
   );
 };
