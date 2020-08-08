@@ -17,7 +17,7 @@ const RedditPosts = () => {
     const result = await fetch("/api/query?limit=100");
     const result_json = await result.json();
 
-    let redditData = result.map(renderIndividualRow);
+    let redditData = result_json.map(renderIndividualRow);
     console.log(redditData);
     setData(redditData);
 
