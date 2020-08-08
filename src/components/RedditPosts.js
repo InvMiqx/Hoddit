@@ -11,7 +11,7 @@ const RedditPosts = () => {
     setData(result_json);
   }, []);
 
-  const renderIndividualRow = (post) => {
+  renderIndividualRow(post){
     return <Postrow
       key={post.title}
       title={post.title}
@@ -23,7 +23,7 @@ const RedditPosts = () => {
     />
   }
 
-  const renderCustomRows = () => {
+  renderCustomRows(){
     let redditData = data.map(renderIndividualRow());
     return redditData;
   }
