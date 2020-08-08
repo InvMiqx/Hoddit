@@ -28,7 +28,6 @@ const RedditPosts = () => {
 
   const renderCustomRows = () => {
 
-    console.log(data[0]);
 
     // let postInfo;
     // let dataTemp = JSON.stringify(data);
@@ -40,8 +39,8 @@ const RedditPosts = () => {
     //
     // return postInfo;
 
-    // let redditData = data.map(renderIndividualRow());
-    // return redditData;
+    let redditData = data.map(renderIndividualRow());
+    return redditData;
   }
 
   return (
