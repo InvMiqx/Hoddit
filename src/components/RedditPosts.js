@@ -29,7 +29,7 @@ const RedditPosts = () => {
   const renderCustomRows = () => {
 
     let postInfo;
-    let dataTemp = data;
+    let dataTemp = JSON.parse(data);
 
     dataTemp.forEach(element=>{
       console.log("FUCK");
