@@ -1,12 +1,18 @@
 import React from 'react';
 
 const Postrow = (props) => {
+
+  let rank = props.rank;
+  let title = props.title.length > 70 ? props.title.substring(0, 70) + "..." : props.title;
+  let subreddit = props.subreddit;
+  let rate = props.rate;
+
   return (
     <div className="listing-item">
-      <span class="rank-value">{props.rank}</span>
-      <span class="title">{props.title}</span>
-      <span class="subreddit">{props.subreddit}</span>
-      <span class="rate">{props.rate}</span>
+      <div class="rank-value">{rank}</div>
+      <div class="title">{title}</div>
+      <div class="subreddit">{subreddit}</div>
+      <div class="rate">{(rate).toFixed(2)}</div>
     </div>
   );
 };
