@@ -2,9 +2,29 @@ body{
   background-color:#282c34;
 }
 .header{
-
+  border-bottom:1px #787878 solid;
+  background-color:#181818;
 }
 .logo{
-  height:30px;
+  height:27px;
   padding:10px;
+  padding-bottom:2px;
+  padding-left:27px;
+  display:inline-block;
+}
+.header-block{
+  color:white;
+  display:inline-block;
+  padding:7px 100px 2px 25px;
+  float:right;
+}
+.mainTextArea{
+  padding-top:44vh;
+  padding-bottom:44vh;
+  color:white;
+  width:100%;
+  background-color:	#181818;
+  margin-top:-20px;
+  text-align:center;
+
 }

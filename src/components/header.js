@@ -5,6 +5,8 @@ const Header = () => {
   return (
     <div className="header">
       <img className="logo" src={logo} alt="Logo" />
+      <a className="header-block">about</a>
+      <a className="header-block">r/hoddit</a>
     </div>
   );
 };
