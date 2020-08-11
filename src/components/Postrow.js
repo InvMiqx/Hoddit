@@ -10,10 +10,10 @@ const Postrow = (props) => {
 
   return (
     <div className="listing-item">
-      <div class="rank-value">{rank}</div>
-      <div class="title"><a href={props.url}>{title}</a></div>
-      <div class="subreddit">{subreddit}</div>
-      <div class="rate">{(rate).toFixed(2)}</div>
+      <div className="rank-value">{rank}</div>
+      <a href={props.url} className="title" target="_blank">{title}</a>
+      <a href={"https://www.reddit.com/r/" + subreddit} className="subreddit" target="_blank">{subreddit}</a>
+      <div className="rate">{(rate).toFixed(2)}</div>
     </div>
   );
 };

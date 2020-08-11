@@ -5,8 +5,8 @@ const Header = () => {
   return (
     <div className="header">
       <img className="logo" src={logo} alt="Logo" />
-      <a className="header-block">about</a>
-      <a className="header-block">r/hoddit</a>
+      <a href="" className="header-block">about</a>
+      <a href="https://www.reddit.com/r/hoddit/" className="header-block">r/hoddit</a>
     </div>
   );
 };

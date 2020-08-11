@@ -17,6 +17,7 @@ body{
   display:inline-block;
   padding:7px 100px 2px 25px;
   float:right;
+  text-decoration:none;
 }
 .mainTextArea{
   padding-top:44vh;
@@ -81,12 +82,16 @@ body{
   width:630px;
   padding-left:10px;
   border-right:1px #181818 solid;
+  color:#a8a8a8;
+  text-decoration:none;
 }
 .subreddit{
   display:inline-block;
   width:160px;
   border-right:1px #181818 solid;
   padding-left:5px;
+  color:#a8a8a8;
+  text-decoration:none;
 }
 .rate{
   width:60px;

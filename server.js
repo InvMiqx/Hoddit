@@ -256,4 +256,4 @@ setInterval(function(){
   flipper = !flipper;
   poster(flipper);
   console.log("data posting!");
-}, 120000);
+}, 600000);
