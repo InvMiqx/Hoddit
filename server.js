@@ -226,7 +226,7 @@ async function poster(flipper){
                 "ups": post.data.ups,
                 "title": post.data.title,
                 "created_utc": post.data.created_utc,
-                "url": "www.reddit.com" + post.data.permalink,
+                "url": "http://www.reddit.com" + post.data.permalink,
                 "subreddit": post.data.subreddit,
                 "rate": post.data.ups/((Math.round((new Date().getTime()/1000)-post.data.created_utc)/60)),
                 "flipper": flipper
