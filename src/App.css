@@ -1,5 +1,5 @@
 body{
-  background-color:#282c34;
+  background-color:#2f3136 ;
 }
 .header{
   border-bottom:1px #787878 solid;
@@ -36,19 +36,19 @@ body{
   margin:auto;
   border:1px #181818 solid;
   /* color:#c9c9c9; */
-  color:#030303;
-  font-weight:500;
+  color:#a8a8a8;
+  font-weight:400;
   border-top-left-radius:5px;
   border-top-right-radius:5px;
 }
 
 .top-listing-item{
   border-bottom:1px #181818 solid;
-  background-color:#282c34;
+  background-color:#2f3136;
 }
 
 .listing-item:nth-child(odd){
-  background-color:#282c34;
+  background-color:#2f3136;
 }
 .listing-item:nth-child(even){
   background-color:#3c414a;
@@ -66,7 +66,7 @@ body{
   margin:auto;
   margin-left:0px;
   margin-top:-65px;
-  background-color:#282c34;
+  background-color:#2f3136;
   width:100px;
 }
 .rank-value{
@@ -102,5 +102,6 @@ body{
   padding-bottom:20px;
 }
 .footer h4{
+  color:white;
   padding-top:30px;
 }
