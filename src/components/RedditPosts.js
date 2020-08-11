@@ -48,30 +48,17 @@ const RedditPosts = () => {
     />
   }
 
-  const renderCustomRows = async () => {
-
-    // const result = await fetch("/api/query?limit=100");
-    // const result_json = await result.json();
-    // setData(result_json);
-
-    // console.log(result_json);
-
-    // let postInfo;
-    // let dataTemp = JSON.stringify(data);
-    //
-    // dataTemp.forEach(element=>{
-    //   console.log("FUCK");
-    //   postInfo+=renderIndividualRow(element);
-    // });
-    //
-    // return postInfo;
-
-    // let redditData = data.map(renderIndividualRow());
-    // return redditData;
-  }
-
   return (
     <div className="listing-item-holder">
+    <div className="listing-header">
+      <h2>posts</h2>
+    </div>
+    <div className="top-listing-item">
+      <div class="rank-value">#</div>
+      <div class="title">title</div>
+      <div class="subreddit">subreddit</div>
+      <div class="rate">ups/m</div>
+    </div>
       {data}
     </div>
   );

@@ -21,7 +21,7 @@ body{
 .mainTextArea{
   padding-top:44vh;
   padding-bottom:44vh;
-  margin-bottom:100px;
+  margin-bottom:70px;
   color:white;
   width:100%;
   background-color:	#181818;
@@ -31,13 +31,20 @@ body{
 
 .listing-item-holder{
   margin-top:100px;
-  width: 800px;
+  width: 900px;
+  padding-top:40px;
   margin:auto;
   border:1px #181818 solid;
+  /* color:#c9c9c9; */
+  color:#030303;
+  font-weight:500;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
 }
 
-.listing-item{
-
+.top-listing-item{
+  border-bottom:1px #181818 solid;
+  background-color:#282c34;
 }
 
 .listing-item:nth-child(odd){
@@ -45,6 +52,22 @@ body{
 }
 .listing-item:nth-child(even){
   background-color:#3c414a;
+}
+.listing-header{
+  text-align:center;
+  margin:auto;
+  padding:0px;
+  background-color:#282c34;
+  width:100px;
+  font-size:18px;
+}
+.listing-header h2{
+  position:absolute;
+  margin:auto;
+  margin-left:0px;
+  margin-top:-65px;
+  background-color:#282c34;
+  width:100px;
 }
 .rank-value{
   width:30px;
@@ -55,13 +78,13 @@ body{
 .title{
   border-left:1px #181818 solid;
   display:inline-block;
-  width:550px;
+  width:630px;
   padding-left:10px;
   border-right:1px #181818 solid;
 }
 .subreddit{
   display:inline-block;
-  width:140px;
+  width:160px;
   border-right:1px #181818 solid;
   padding-left:5px;
 }
@@ -69,4 +92,15 @@ body{
   width:60px;
   text-align:center;
   display:inline-block;
+}
+
+.footer{
+  width:100%;
+  text-align:center;
+  background-color:#181818;
+  margin-top:40px;
+  padding-bottom:20px;
+}
+.footer h4{
+  padding-top:30px;
 }

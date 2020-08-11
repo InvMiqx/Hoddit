@@ -3,7 +3,7 @@ import React from 'react';
 const Postrow = (props) => {
 
   let rank = props.rank;
-  let title = props.title.length > 70 ? props.title.substring(0, 70) + "..." : props.title;
+  let title = props.title.length > 80 ? props.title.substring(0, 80) + "..." : props.title;
   let subreddit = props.subreddit;
   let rate = props.rate;
 
