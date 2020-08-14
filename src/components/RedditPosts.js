@@ -25,7 +25,7 @@ const RedditPosts = () => {
     console.log(redditData);
     setData(redditData);
 
-    let rank = 0;
+    let rank = 1;
     let redditData2 = result.map(function(post){
       rank++;
       return renderIndividualRow(post, rank)
