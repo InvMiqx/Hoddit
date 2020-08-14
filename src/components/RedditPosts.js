@@ -21,12 +21,12 @@ const RedditPosts = () => {
     const result = await fetch("/api/query?limit=100");
     const result_json = await result.json();
 
-    let redditData = result_json.map(renderIndividualRow);
-    console.log(redditData);
-    setData(redditData);
+    // let redditData = result_json.map(renderIndividualRow);
+    // console.log(redditData);
+    // setData(redditData);
 
     var rank = 0;
-    let redditData2 = result.map(function(post){
+    let redditData2 = result_json.map(function(post){
       rank++;
       return renderIndividualRow(post, rank)
     });
