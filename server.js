@@ -61,17 +61,17 @@ app.get('/', function (req, res) {
 // var httpsServer = https.createServer(credentials, app);
 
 // httpsServer.listen(process.env.PORT || 8080);
-app.enable('trust proxy');
-app.use (function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] != 'https') {
-    res.redirect('https://' + req.hostname + req.originalUrl);
-    console.log("Redirect!");
-  }
-  else {
-    console.log("good!");
-    next();
-  }
-});
+// app.enable('trust proxy');
+// app.use (function (req, res, next) {
+//   if (req.headers['x-forwarded-proto'] != 'https') {
+//     res.redirect('https://' + req.hostname + req.originalUrl);
+//     console.log("Redirect!");
+//   }
+//   else {
+//     console.log("good!");
+//     next();
+//   }
+// });
 
 app.listen(process.env.PORT || 8080);
 
