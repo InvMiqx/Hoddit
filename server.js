@@ -4,7 +4,6 @@ const path = require('path');
 const cors = require('cors');
 const fetch = require('node-fetch');
 const app = express();
-const sslRedirect = require('heroku-ssl-redirect');
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://InvMiqx:charlie18530@cluster0.lbj32.mongodb.net/Cluster0?retryWrites=true&w=majority', {
@@ -30,9 +29,17 @@ var post = mongoose.model('Post', postSchema);
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
-app.use(sslRedirect());
 app.options('*', cors());
 app.use(bodyParser.json());
+
+if(process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https')
+      res.redirect(`https://${req.header('host')}${req.url}`)
+    else
+      next()
+  })
+}
 
 app.get('/ping', function (req, res) {
  return res.send('pong');
