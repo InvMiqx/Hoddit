@@ -60,7 +60,7 @@ var credentials = {key: privateKey, cert: certificate};
 
 var httpsServer = https.createServer(credentials, app);
 
-httpsServer.listen(8443);
+httpsServer.listen(8080);
 
 // app.listen(process.env.PORT || 8080);
 
