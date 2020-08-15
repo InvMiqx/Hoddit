@@ -61,9 +61,16 @@ app.get('/', function (req, res) {
 // var httpsServer = https.createServer(credentials, app);
 
 // httpsServer.listen(process.env.PORT || 8080);
+app.use (function (req, res, next) {
+        if (req.secure) {
+                // request was via https, so do no special handling
+                next();
+        } else {
+                // request was via http, so redirect to https
+                res.redirect('https://' + req.headers.host + req.url);
+        }
+});
 
-var sslRedirect = require('heroku-ssl-redirect');
-app.use(sslRedirect());
 app.listen(process.env.PORT || 8080);
 
 //api stuff
