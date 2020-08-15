@@ -39,6 +39,11 @@ app.get('/testJSON', function (req, res) {
   res.json({"_id":"5f279f3d0ef27d001775bd74","ups":141670,"title":"Who knows why?","created_utc":1596391948,"url":"https://i.redd.it/8l82z1uarme51.png","subreddit":"memes","rate":211.2270761890562,"flipper":false});
 })
 
+//REMOVE ON RELEASE:
+app.get('/.well-known/pki-validation/', function(req, res) {
+  res.sendFile('4EEFA0D6548721F3F0DCFCD0D0999C07.txt', {root: __dirname});
+});
+
 //api stuff
 app.get('/api/query', async(req, res) => {
   //all sorted by default

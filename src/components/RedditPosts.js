@@ -50,15 +50,15 @@ const RedditPosts = () => {
 
   return (
     <div className="listing-item-holder">
-    <div className="listing-header">
-      <h2>posts</h2>
-    </div>
-    <div className="top-listing-item">
-      <div class="rank-value">#</div>
-      <div class="title">title</div>
-      <div class="subreddit">subreddit</div>
-      <div class="rate">ups/m</div>
-    </div>
+      <div className="listing-header">
+        <h2>posts</h2>
+      </div>
+      <div className="top-listing-item">
+        <div className="rank-value">#</div>
+        <div className="title">title</div>
+        <div className="subreddit">subreddit</div>
+        <div className="rate">ups/m</div>
+      </div>
       {data}
     </div>
   );
