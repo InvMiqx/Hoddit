@@ -63,6 +63,7 @@ app.get('/', function (req, res) {
 // httpsServer.listen(process.env.PORT || 8080);
 app.enable('trust proxy');
 app.use (function (req, res, next) {
+  console.log(req.headers['x-forwarded-proto'])
   if (req.headers['x-forwarded-proto'] != 'https') {
     res.redirect(status, 'https://' + req.hostname + req.originalUrl);
     console.log("Redirect!");
