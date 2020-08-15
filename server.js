@@ -47,6 +47,23 @@ app.get('/testJSON', function (req, res) {
   res.json({"_id":"5f279f3d0ef27d001775bd74","ups":141670,"title":"Who knows why?","created_utc":1596391948,"url":"https://i.redd.it/8l82z1uarme51.png","subreddit":"memes","rate":211.2270761890562,"flipper":false});
 })
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+const https = require('https');
+const fs = require('fs');
+var privateKey  = fs.readFileSync('private.key', 'utf8');
+var certificate = fs.readFileSync('certificate.crt', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
+
+
+var httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(8443);
+
+// app.listen(process.env.PORT || 8080);
+
 //api stuff
 app.get('/api/query', async(req, res) => {
   //all sorted by default
@@ -171,12 +188,6 @@ app.get('/api/query', async(req, res) => {
   }
 
 });
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.listen(process.env.PORT || 8080);
 
 async function poster(flipper){
 
