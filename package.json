@@ -16,6 +16,9 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  {
+    "https_only": true
+  },
   "scripts": {
     "start": "react-scripts start && node server.js",
     "build": "react-scripts build",
