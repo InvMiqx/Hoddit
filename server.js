@@ -4,6 +4,7 @@ const path = require('path');
 const cors = require('cors');
 const fetch = require('node-fetch');
 const app = express();
+const sslRedirect = require('heroku-ssl-redirect');
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://InvMiqx:charlie18530@cluster0.lbj32.mongodb.net/Cluster0?retryWrites=true&w=majority', {
@@ -29,6 +30,7 @@ var post = mongoose.model('Post', postSchema);
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
+app.use(sslRedirect());
 app.options('*', cors());
 app.use(bodyParser.json());
 
