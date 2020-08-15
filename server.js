@@ -61,6 +61,7 @@ app.get('/', function (req, res) {
 // var httpsServer = https.createServer(credentials, app);
 
 // httpsServer.listen(process.env.PORT || 8080);
+app.enable('trust proxy');
 app.use (function (req, res, next) {
         if (req.secure) {
                 // request was via https, so do no special handling
