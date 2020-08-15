@@ -65,7 +65,7 @@ app.enable('trust proxy');
 app.use (function (req, res, next) {
   // console.log(req.headers['x-forwarded-proto'])
   // if (req.headers['x-forwarded-proto'] != 'https') {
-    res.redirect(status, 'https://' + req.hostname + req.originalUrl);
+    res.redirect('https://' + req.hostname + req.originalUrl);
     console.log("Redirect!");
   // }
   // else {
