@@ -51,18 +51,20 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const https = require('https');
-const fs = require('fs');
-var privateKey  = fs.readFileSync('private.key', 'utf8');
-var certificate = fs.readFileSync('certificate.crt', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
+// const https = require('https');
+// const fs = require('fs');
+// var privateKey  = fs.readFileSync('private.key', 'utf8');
+// var certificate = fs.readFileSync('certificate.crt', 'utf8');
+// var credentials = {key: privateKey, cert: certificate};
+//
+//
+// var httpsServer = https.createServer(credentials, app);
 
+// httpsServer.listen(process.env.PORT || 8080);
 
-var httpsServer = https.createServer(credentials, app);
-
-httpsServer.listen(process.env.PORT || 8080);
-
-// app.listen(process.env.PORT || 8080);
+var sslRedirect = require('heroku-ssl-redirect');
+app.use(sslRedirect());
+app.listen(process.env.PORT || 8080);
 
 //api stuff
 app.get('/api/query', async(req, res) => {
