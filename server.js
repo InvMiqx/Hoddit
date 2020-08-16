@@ -169,21 +169,29 @@ app.get('/', function (req, res) {
   console.log("main page loaded");
 });
 
-const fs = require('fs');
-const https = require('https');
-https.createServer({
-  key: fs.readFileSync('private.key'),
-  cert: fs.readFileSync('certificate.crt')
-},app)
-.listen(process.env.PORT || 8080, function(err){
-  if(err) console.log(err);
-  console.log("started");
+// const fs = require('fs');
+// const https = require('https');
+// https.createServer({
+//   key: fs.readFileSync('private.key'),
+//   cert: fs.readFileSync('certificate.crt')
+// },app)
+// .listen(process.env.PORT || 8080, function(err){
+//   if(err) console.log(err);
+//   console.log("started");
+// });
+
+app.use((req, res, next) => {
+  if (req.header('x-forwarded-proto') !== 'https') {
+    res.redirect(`https://${req.header('host')}${req.url}`)
+  } else {
+    next();
+  }
 });
 
-// app.listen(process.env.PORT || 8080, function(err){
-//   if (err) console.log(err);
-//   console.log(process.env.PORT);
-// });
+app.listen(process.env.PORT || 8080, function(err){
+  if (err) console.log(err);
+  console.log(process.env.PORT);
+});
 
 async function poster(flipper){
 
