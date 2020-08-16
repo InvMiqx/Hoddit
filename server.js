@@ -169,8 +169,13 @@ app.get('/', function (req, res) {
   console.log("main page loaded");
 });
 
+const fs = require('fs');
 const https = require('https');
-https.createServer(app).listen(process.env.PORT || 8080, function(err){
+https.createServer({
+  key: fs.readFileSync('private.key'),
+  cert: fs.readFileSync('certificate.crt')
+},app)
+.listen(process.env.PORT || 8080, function(err){
   if(err) console.log(err);
   console.log("started");
 });
