@@ -175,10 +175,10 @@ https.createServer(app).listen(process.env.PORT || 8080, function(err){
   console.log("started");
 });
 
-app.listen(process.env.PORT || 8080, function(err){
-  if (err) console.log(err);
-  console.log(process.env.PORT);
-});
+// app.listen(process.env.PORT || 8080, function(err){
+//   if (err) console.log(err);
+//   console.log(process.env.PORT);
+// });
 
 async function poster(flipper){
 
