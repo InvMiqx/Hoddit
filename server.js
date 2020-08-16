@@ -27,7 +27,7 @@ var postSchema = new mongoose.Schema({
 
 var post = mongoose.model('Post', postSchema);
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 app.options('*', cors());
 app.use(bodyParser.json());
