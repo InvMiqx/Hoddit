@@ -166,15 +166,16 @@ app.get('/api/query', async(req, res) => {
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  console.log(process.env.PORT);
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, function(err){
+  if (err) console.log(err);
+  console.log(process.env.PORT);
+});
 
 async function poster(flipper){
 
     try{
-
 
       let subredditList = [
         "announcements","funny","AskReddit","gaming","aww","pics","science","worldnews","Music","videos","movies","todayilearned","news","Showerthoughts","IAmA","gifs","EarthPorn","askscience","food","Jokes","explainlikeimfive","books","LifeProTips","Art","mildlyinteresting","DIY","sports","nottheonion","space","gadgets","television","Documentaries","photoshopbattles","GetMotivated","UpliftingNews","tifu","InternetIsBeautiful","history","philosophy","Futurology","dataisbeautiful","OldSchoolCool","WritingPrompts","personalfinance","nosleep","creepy","TwoXChromosomes","memes","technology","AdviceAnimals","Fitness","wholesomememes","politics","WTF","interestingasfuck","bestof","BlackPeopleTwitter","oddlysatisfying","travel","leagueoflegends","facepalm","me_irl","lifehacks","NatureIsFuckingLit","pcmasterrace","dankmemes","Tinder","Whatcouldgowrong","Minecraft","relationship_advice","BikiniBottomTwitter","trippinthroughtime","PS4","nba","AnimalsBeingBros","tattoos","woahdude","AnimalsBeingJerks","reactiongifs","FoodPorn","Overwatch","photography","PewdiepieSubmissions","Unexpected","relationships","dadjokes","boardgames","gardening","instant_regret","programming","mildlyinfuriating","atheism","pokemon","PublicFreakout","nextfuckinglevel","AnimalsBeingDerps","pokemongo","WatchPeopleDieInside","ContagiousLaughter","Damnthatsinteresting","gameofthrones","buildapc","europe","iphone","Games","drawing","Parenting","malefashionadvice","itookapicture","rarepuppers","YouShouldKnow","nonononoyes","loseit","BetterEveryLoop","Android","GifRecipes","CrappyDesign","Coronavirus","Wellthatsucks","AmItheAsshole","NintendoSwitch","slowcooking","soccer","xboxone","trashy",
