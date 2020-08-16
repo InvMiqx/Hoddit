@@ -27,7 +27,7 @@ var postSchema = new mongoose.Schema({
 
 var post = mongoose.model('Post', postSchema);
 
-// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 app.options('*', cors());
 app.use(bodyParser.json());
@@ -167,6 +167,12 @@ app.get('/api/query', async(req, res) => {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
   console.log("main page loaded");
+});
+
+const https = require('https');
+https.createServer(app).listen(443, function(err){
+  if(err) console.log(err);
+  console.log("started");
 });
 
 app.listen(process.env.PORT || 8080, function(err){
