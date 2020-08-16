@@ -170,7 +170,7 @@ app.get('/', function (req, res) {
 });
 
 const https = require('https');
-https.createServer(app).listen(443, function(err){
+https.createServer(app).listen(process.env.PORT || 8080, function(err){
   if(err) console.log(err);
   console.log("started");
 });
