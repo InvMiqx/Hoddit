@@ -36,6 +36,10 @@ app.get('/ping', function (req, res) {
  return res.send('pong');
 });
 
+app.get('/sitemap', function(req, res) {
+  res.sendFile('sitemap.txt');
+});
+
 //api stuff
 app.get('/api/query', async(req, res) => {
   //all sorted by default
