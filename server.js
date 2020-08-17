@@ -36,8 +36,9 @@ app.get('/ping', function (req, res) {
  return res.send('pong');
 });
 
+const fs = require('fs');
 app.get('/sitemap', function(req, res) {
-  res.sendFile('sitemap.txt');
+  res.sendFile(__dirname + '/sitemap.txt');
 });
 
 //api stuff
