@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://InvMiqx:charlie18530@cluster0.lbj32.mongodb.net/Cluster0?retryWrites=true&w=majority', {
+mongoose.connect('mongodb info', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
