@@ -180,13 +180,13 @@ app.get('/', function (req, res) {
 //   console.log("started");
 // });
 
-app.use((req, res, next) => {
-  if (req.header('x-forwarded-proto') !== 'https') {
-    res.redirect(`https://${req.header('host')}${req.url}`)
-  } else {
-    next();
-  }
-});
+// app.use((req, res, next) => {
+//   if (req.header('x-forwarded-proto') !== 'https') {
+//     res.redirect(`https://${req.header('host')}${req.url}`)
+//   } else {
+//     next();
+//   }
+// });
 
 app.listen(process.env.PORT || 8080, function(err){
   if (err) console.log(err);

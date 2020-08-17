@@ -12,6 +12,10 @@ const Postrow = (props) => {
 
   useEffect(()=>{
     console.log(width);
+  }, [width]);
+
+  useEffect(()=>{
+    console.log(width);
 
     //titlelim changes
     if(width <=620){
@@ -25,8 +29,11 @@ const Postrow = (props) => {
     }
 
     //subredditlim
-    if(width <= 620){
-      setSubredditLim(10);
+    if(width<500){
+      setSubredditLim(9);
+    }
+    else if(width < 620){
+      setSubredditLim(15);
     }
     else if(width > 620){
       setSubredditLim(1000);
@@ -35,16 +42,18 @@ const Postrow = (props) => {
   }, [width]);
 
   let rank = props.rank;
-  let title = props.title.length > titleLim ? props.title.substring(0, titleLim) + ".." : props.title;
-  let subreddit = props.subreddit.length > subredditLim ? props.subreddit.substring(0, subredditLim) + ".." : props.subreddit;
+  let title = props.title;
+  let titleDisplay = props.title.length > titleLim ? props.title.substring(0, titleLim) + ".." : props.title;
+  let subreddit = props.subreddit;
+  let subredditDisplay = props.subreddit.length > subredditLim ? props.subreddit.substring(0, subredditLim) + ".." : props.subreddit;
   let rate = props.rate;
   let url = props.url;
 
   return (
     <div className="listing-item">
       <div className="rank-value">{rank}</div>
-      <a href={props.url} className="title" target="_blank">{title}</a>
-      <a href={"https://www.reddit.com/r/" + subreddit} className="subreddit" target="_blank">{subreddit}</a>
+      <a href={props.url} className="title" target="_blank">{titleDisplay}</a>
+      <a href={"https://www.reddit.com/r/" + subreddit} className="subreddit" target="_blank">{subredditDisplay}</a>
       <div className="rate">{(rate).toFixed(2)}</div>
     </div>
   );
