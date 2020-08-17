@@ -1,0 +1,169 @@
+body{
+  background-color:#2f3136 ;
+}
+.header{
+  border-bottom:1px #787878 solid;
+  background-color:#181818;
+}
+.logo{
+  height:27px;
+  padding:10px;
+  padding-bottom:2px;
+  padding-left:27px;
+  display:inline-block;
+}
+.header-block{
+  color:white;
+  display:inline-block;
+  padding:7px 100px 2px 25px;
+  float:right;
+  text-decoration:none;
+}
+.mainTextArea{
+  padding-top:44vh;
+  padding-bottom:44vh;
+  margin-bottom:70px;
+  color:white;
+  width:100%;
+  background-color:	#181818;
+  margin-top:-20px;
+  text-align:center;
+}
+
+.listing-item-holder{
+  margin-top:100px;
+  width: 900px;
+  padding-top:40px;
+  margin:auto;
+  border:1px #181818 solid;
+  /* color:#c9c9c9; */
+  color:#a8a8a8;
+  font-weight:400;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+}
+
+.top-listing-item{
+  border-bottom:1px #181818 solid;
+  background-color:#2f3136;
+}
+
+.listing-item{
+  padding-top:1px;
+  padding-bottom:1px;
+}
+
+.listing-item:nth-child(odd){
+  background-color:#2f3136;
+}
+.listing-item:nth-child(even){
+  background-color:#3c414a;
+}
+.listing-header{
+  text-align:center;
+  margin:auto;
+  padding:0px;
+  background-color:#282c34;
+  width:100px;
+  font-size:18px;
+}
+.listing-header h2{
+  position:absolute;
+  margin:auto;
+  margin-left:0px;
+  margin-top:-65px;
+  background-color:#2f3136;
+  width:100px;
+}
+.rank-value{
+  width:30px;
+  text-align:center;
+  /* border-left:1px #181818 solid; */
+  display:inline-block;
+}
+.title{
+  border-left:1px #181818 solid;
+  display:inline-block;
+  width:630px;
+  padding-left:10px;
+  border-right:1px #181818 solid;
+  color:#a8a8a8;
+  text-decoration:none;
+}
+.subreddit{
+  display:inline-block;
+  width:160px;
+  border-right:1px #181818 solid;
+  padding-left:5px;
+  color:#a8a8a8;
+  text-decoration:none;
+}
+.rate{
+  width:60px;
+  text-align:center;
+  display:inline-block;
+}
+
+.footer{
+  padding-top:10px;
+  width:100%;
+  text-align:center;
+  background-color:#181818;
+  margin-top:40px;
+  padding-bottom:10px;
+}
+.footer h4{
+  color:#a8a8a8;
+  font-size:12px;
+}
+.footer a{
+  color:#a8a8a8;
+  font-size:13px;
+  font-weight:500;
+  text-decoration: none;
+}
+
+
+/* mobile */
+@media only screen and (max-width: 940px) {
+  .mainTextArea{
+    padding-top:32vh;
+    padding-bottom:44vh;
+    margin-bottom:70px;
+    color:white;
+    width:100%;
+    background-color:	#181818;
+    margin-top:-20px;
+    text-align:center;
+  }
+  .logo{
+    height:20px;
+    padding:15px;
+    padding-bottom:2px;
+    padding-left:15px;
+  }
+  .header-block{
+    font-size:15px;
+    padding:15px 25px 2px 5px;
+  }
+  .listing-item-holder{
+    width: 95%;
+    font-size:12px;
+  }
+  .rank-value{
+    width:5%;
+  }
+  .title{
+    padding-left:4px;
+    width:60%;
+  }
+  .subreddit{
+    width:20%;
+    padding-left:4px;
+  }
+  .rate{
+    padding-left:1px;
+    width:8%;
+  }
+
+}

@@ -1,0 +1,15 @@
+{
+  "short_name": "Hoddit",
+  "name": "Hoddit - the fastest growing reddit posts right now",
+  "icons": [
+    {
+      "src": "icon4.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
