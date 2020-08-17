@@ -15,19 +15,44 @@ body{
 .header-block{
   color:white;
   display:inline-block;
-  padding:7px 100px 2px 25px;
+  padding:10px 70px 2px 25px;
   float:right;
   text-decoration:none;
 }
 .mainTextArea{
-  padding-top:44vh;
-  padding-bottom:44vh;
+  padding-top:40vh;
+  padding-bottom:52vh;
   margin-bottom:70px;
   color:white;
   width:100%;
   background-color:	#181818;
   margin-top:-20px;
   text-align:center;
+}
+.arrow{
+  box-sizing: border-box;
+  height: 5vw;
+  width: 5vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+  position:absolute;
+  left:47.8%;
+  right:50%;
+  top:80%;
+  animation: MoveUpDown 4s linear infinite;
+  transition: opacity .5s ease-out;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 50px;
+  }
 }
 
 .listing-item-holder{
@@ -92,14 +117,14 @@ body{
 }
 .subreddit{
   display:inline-block;
-  width:160px;
+  width:155px;
   border-right:1px #181818 solid;
   padding-left:5px;
   color:#a8a8a8;
   text-decoration:none;
 }
 .rate{
-  width:60px;
+  width:65px;
   text-align:center;
   display:inline-block;
 }
@@ -128,7 +153,7 @@ body{
 @media only screen and (max-width: 940px) {
   .mainTextArea{
     padding-top:32vh;
-    padding-bottom:44vh;
+    padding-bottom:52vh;
     margin-bottom:70px;
     color:white;
     width:100%;
@@ -148,22 +173,24 @@ body{
   }
   .listing-item-holder{
     width: 95%;
-    font-size:12px;
+    font-size:11.5px;
   }
   .rank-value{
-    width:5%;
+    width:6%;
   }
   .title{
     padding-left:4px;
-    width:60%;
+    width:57%;
   }
   .subreddit{
     width:20%;
     padding-left:4px;
   }
   .rate{
+    margin-left:4px;
+    text-align:center;
     padding-left:1px;
-    width:8%;
+    width:10%;
   }
 
 }

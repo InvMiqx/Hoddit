@@ -10,12 +10,12 @@ const Postrow = (props) => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
-  useEffect(()=>{
-    console.log(width);
-  }, [width]);
+  // useEffect(()=>{
+  //   console.log(width);
+  // }, [width]);
 
   useEffect(()=>{
-    console.log(width);
+    // console.log(width);
 
     //titlelim changes
     if(width <=620){

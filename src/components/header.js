@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="header">
       <img className="logo" src={logo} alt="Logo" />
-      <a href="https://www.reddit.com/r/hoddit/" className="header-block">r/hoddit ⮞</a>
+      <a href="https://www.reddit.com/r/hoddit/" className="header-block">r/hoddit ></a>
     </div>
   );
 };
