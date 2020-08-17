@@ -109,7 +109,7 @@ body{
 .title{
   border-left:1px #181818 solid;
   display:inline-block;
-  width:630px;
+  width:625px;
   padding-left:10px;
   border-right:1px #181818 solid;
   color:#a8a8a8;
@@ -117,7 +117,7 @@ body{
 }
 .subreddit{
   display:inline-block;
-  width:155px;
+  width:160px;
   border-right:1px #181818 solid;
   padding-left:5px;
   color:#a8a8a8;
@@ -180,10 +180,10 @@ body{
   }
   .title{
     padding-left:4px;
-    width:57%;
+    width:55%;
   }
   .subreddit{
-    width:20%;
+    width:21%;
     padding-left:4px;
   }
   .rate{
