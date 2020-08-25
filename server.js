@@ -243,8 +243,9 @@ async function poster(flipper){
 
           let posts = [];
 
-          dataset.data.data.forEach(data => {
-            console.log(data);
+          console.log(dataset);
+          dataset.forEach(data => {
+            // console.log(data);
             // console.log(data.data.children);
             // data.data.children.forEach(post =>{
             //   posts.push({
@@ -267,7 +268,6 @@ async function poster(flipper){
               console.log("Deleted!");
             });
           });
-
 
         });
       }
