@@ -244,7 +244,7 @@ async function poster(flipper){
           let posts = [];
 
           dataset.forEach(data => {
-            console.log("fuck my ass");
+            console.log(data);
             // data.children.forEach(post =>{
             //
             //   posts.push({
