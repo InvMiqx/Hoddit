@@ -244,7 +244,7 @@ async function poster(flipper){
           let posts = [];
 
           dataset.forEach(data => {
-            data.children.forEach(post =>{
+            data.data.children.forEach(post =>{
               console.log(post);
               posts.push({
                 "ups": post.data.ups,
