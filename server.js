@@ -244,17 +244,18 @@ async function poster(flipper){
           let posts = [];
 
           dataset.forEach(data => {
-            data.children.forEach(post =>{
-              posts.push({
-                "ups": post.ups,
-                "title": post.title,
-                "created_utc": post.created_utc,
-                "url": "http://www.reddit.com" + post.permalink,
-                "subreddit": post.subreddit,
-                "rate": post.ups/((Math.round((new Date().getTime()/1000)-post.created_utc)/60)),
-                "flipper": flipper
-              });
-            });
+            console.log(data);
+            // data.data.children.forEach(post =>{
+            //   posts.push({
+            //     "ups": post.ups,
+            //     "title": post.title,
+            //     "created_utc": post.created_utc,
+            //     "url": "http://www.reddit.com" + post.permalink,
+            //     "subreddit": post.subreddit,
+            //     "rate": post.ups/((Math.round((new Date().getTime()/1000)-post.created_utc)/60)),
+            //     "flipper": flipper
+            //   });
+            // });
           });
 
           post.collection.insertMany(posts, function(err, docs){
