@@ -244,7 +244,7 @@ async function poster(flipper){
           let posts = [];
 
           dataset.forEach(data => {
-            data.data.children.forEach(post =>{
+            data.children.forEach(post =>{
 
               posts.push({
                 "ups": post.data.ups,
@@ -276,6 +276,7 @@ async function poster(flipper){
 
 }
 var flipper = false;
+poster(flipper);
 setInterval(function(){
   flipper = !flipper;
   poster(flipper);
