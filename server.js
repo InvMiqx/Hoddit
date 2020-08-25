@@ -247,12 +247,12 @@ async function poster(flipper){
             data.data.children.forEach(post =>{
               console.log(post);
               posts.push({
-                "ups": post.data.ups,
-                "title": post.data.title,
-                "created_utc": post.data.created_utc,
-                "url": "http://www.reddit.com" + post.data.permalink,
-                "subreddit": post.data.subreddit,
-                "rate": post.data.ups/((Math.round((new Date().getTime()/1000)-post.data.created_utc)/60)),
+                "ups": post.ups,
+                "title": post.title,
+                "created_utc": post.created_utc,
+                "url": "http://www.reddit.com" + post.permalink,
+                "subreddit": post.subreddit,
+                "rate": post.ups/((Math.round((new Date().getTime()/1000)-post.created_utc)/60)),
                 "flipper": flipper
               });
             });
