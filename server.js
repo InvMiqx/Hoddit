@@ -271,7 +271,7 @@ async function poster(flipper){
             });
           });
 
-          delete posts;
+          let posts = [];
 
         });
       }
