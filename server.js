@@ -263,17 +263,17 @@ async function poster(flipper){
 
           post.collection.insertMany(posts, function(err, docs){
             if(err) throw err;
-            console.log("new data added: " + subredditList.length);
-            post.deleteMany({"flipper": !flipper}, function(err){
-              if(err) console.log(err);
-              console.log("Deleted!");
-            });
+            console.log("new data added");
           });
 
           posts = [];
 
         });
       }
+      post.deleteMany({"flipper": !flipper}, function(err){
+        if(err) console.log(err);
+        console.log("Deleted!");
+      });
     }
 
 
