@@ -238,12 +238,12 @@ async function poster(flipper){
         // all JSON answers are parsed: "users" is the array of them
         .then(dataset => {
           // console.log(dataset);
-          let ups = [];
-          let titles = [];
-          let created_utc = [];
-          let url = [];
-          let subreddit = [];
-          let rate = [];
+          // let ups = [];
+          // let titles = [];
+          // let created_utc = [];
+          // let url = [];
+          // let subreddit = [];
+          // let rate = [];
 
           let posts = [];
           dataset.forEach(data => {
@@ -270,6 +270,8 @@ async function poster(flipper){
               console.log("Deleted!");
             });
           });
+
+          delete posts;
 
         });
       }
