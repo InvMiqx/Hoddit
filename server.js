@@ -226,11 +226,7 @@ async function poster(flipper){
     //   console.log(dataset);
     // });
 
-    var i,j,urlschunk,chunk = 100;
-    for (i=0,j=urls.length; i<j; i+=chunk) {
-      urlschunk = urls.slice(i,i+chunk);
-
-      let requests = urlschunk.map(url => fetch(url));
+      let requests = urls.map(url => fetch(url));
 
       Promise.all(requests)
         // map array of responses into an array of response.json() to read their content
@@ -238,16 +234,16 @@ async function poster(flipper){
         // all JSON answers are parsed: "users" is the array of them
         .then(dataset => {
           // console.log(dataset);
-          // let ups = [];
-          // let titles = [];
-          // let created_utc = [];
-          // let url = [];
-          // let subreddit = [];
-          // let rate = [];
+          let ups = [];
+          let titles = [];
+          let created_utc = [];
+          let url = [];
+          let subreddit = [];
+          let rate = [];
 
           let posts = [];
+
           dataset.forEach(data => {
-            // console.log(data.data.children);
             data.data.children.forEach(post =>{
               posts.push({
                 "ups": post.data.ups,
@@ -263,20 +259,16 @@ async function poster(flipper){
 
           post.collection.insertMany(posts, function(err, docs){
             if(err) throw err;
-            console.log("new data added");
+            console.log("new data added: " + subredditList.length);
+            post.deleteMany({"flipper": !flipper}, function(err){
+              if(err) console.log(err);
+              console.log("Deleted!");
+            });
           });
 
-          posts = [];
 
         });
       }
-      post.deleteMany({"flipper": !flipper}, function(err){
-        if(err) console.log(err);
-        console.log("Deleted!");
-      });
-    }
-
-
       catch(err){
         console.log(err);
       }
