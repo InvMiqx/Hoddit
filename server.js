@@ -242,7 +242,7 @@ async function poster(flipper){
           let rate = [];
 
           let posts = [];
-          console.log(dataset.data);
+          console.log(dataset);
           dataset.forEach(data => {
             // console.log(data.data.children);
             // data.data.children.forEach(post =>{
