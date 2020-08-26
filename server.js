@@ -32,15 +32,6 @@ app.use(cors());
 app.options('*', cors());
 app.use(bodyParser.json());
 
-var WORKERS = process.env.WEB_CONCURRENCY || 1;
-function start() {
-  //
-}
-throng({
-  workers: WORKERS,
-  lifetime: Infinity
-}, start);
-
 app.get('/ping', function (req, res) {
  return res.send('pong');
 });
@@ -235,7 +226,11 @@ async function poster(flipper){
     //   console.log(dataset);
     // });
 
-      let requests = urls.map(url => fetch(url));
+    var i,j,urlschunk,chunk = 100;
+    for (i=0,j=urls.length; i<j; i+=chunk) {
+      urlschunk = urls.slice(i,i+chunk);
+
+      let requests = urlschunk.map(url => fetch(url));
 
       Promise.all(requests)
         // map array of responses into an array of response.json() to read their content
@@ -278,6 +273,9 @@ async function poster(flipper){
 
         });
       }
+    }
+
+
       catch(err){
         console.log(err);
       }
