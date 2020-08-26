@@ -32,6 +32,15 @@ app.use(cors());
 app.options('*', cors());
 app.use(bodyParser.json());
 
+var WORKERS = process.env.WEB_CONCURRENCY || 1;
+function start() {
+  //
+}
+throng({
+  workers: WORKERS,
+  lifetime: Infinity
+}, start);
+
 app.get('/ping', function (req, res) {
  return res.send('pong');
 });
