@@ -20,7 +20,7 @@
   "engines" : { "node" : ">=12.10.0" },
   "https_only": true,
   "scripts": {
-    "start": "react-scripts start && node server.js",
+    "start": "react-scripts start && export NODE_OPTIONS='--max-old-space-size=1024' && node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
