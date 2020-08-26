@@ -270,7 +270,7 @@ async function poster(flipper){
             });
           });
 
-          let posts = [];
+          posts = [];
 
         });
       }
