@@ -5,8 +5,10 @@ const cors = require('cors');
 const fetch = require('node-fetch');
 const app = express();
 
+const pass = require('./pass.js');
+
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://InvMiqx:penis!@cluster0.lbj32.mongodb.net/Cluster0?retryWrites=true&w=majority', {
+mongoose.connect(pass, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
