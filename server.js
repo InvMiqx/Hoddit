@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://InvMiqx:charlie18530@cluster0.lbj32.mongodb.net/Cluster0?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://InvMiqx:penis!@cluster0.lbj32.mongodb.net/Cluster0?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -31,6 +31,11 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 app.options('*', cors());
 app.use(bodyParser.json());
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  console.log("main page loaded");
+});
 
 app.get('/ping', function (req, res) {
  return res.send('pong');
@@ -164,11 +169,6 @@ app.get('/api/query', async(req, res) => {
     console.log(e);
   }
 
-});
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  console.log("main page loaded");
 });
 
 // const fs = require('fs');
