@@ -8,7 +8,7 @@ const app = express();
 const pass = require('./pass.js');
 
 const mongoose = require('mongoose');
-mongoose.connect(pass, {
+mongoose.connect("mongodb+srv://InvMiqx:nTfnniK6TvZkngqy@cluster0.lbj32.mongodb.net/Cluster0?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
