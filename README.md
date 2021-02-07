@@ -1,68 +1,103 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+* [About Hoddit](#about-hoddit)
+  * [What is hoddit for?](#what-is-hoddit-for)
+  * [Technologies](#technologies)
+* [Check out Hoddit](#check-out-hoddit)
+* [Hoddit API](#hoddit-api)
+  * [Fetch Usage](#fetch-usage)
+  * [Hoddit API Basic Documentation](#hoddit-api-basic-documentation)
+    * [limit](#limit)
+    * [all](#all)
+    * [nosort](#nosort)
+    * [subreddit](#subreddit)
+    * [bounds](#bounds)
+* [Contributing](#contributing)
+* [License](#license)
 
-In the project directory, you can run:
+## About Hoddit
 
-### `yarn start`
+Hoddit is a website that tracks the fastest growing reddit posts right now!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### What is hoddit for?
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Reddit's rising feature sucks: There's no ranking between posts, there's no rates at which posts are increasing, and it doesn't track subreddits you're not subscribed to. The answer to that? 
 
-### `yarn test`
+Hoddit! Hoddit tracks the fastest growing posts accross all subreddits and organizes them into 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technologies
+Project is created with: 
+* React version: 16.13.1
+* Node version: 11.12.0
+* Express version: 4.17.1
+* MongoDB
+* Heroku
+* Atom Editor
 
-### `yarn build`
+## Check out Hoddit
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can check out hoddit at [hoddit.com](https://www.hoddit.com)! Note that the site is very new and still under works :)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Hoddit API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+make requests from https://www.hoddit.com/api/ (no key required for now, but will require in the future)
 
-### `yarn eject`
+### Fetch Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```javascript
+const requester = async () => {
+    let data = await fetch("https://www.hoddit.com/api/query?whatever");
+    //do whatever
+}
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Hoddit API basic documentation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### limit
+```javascript
+let data = await fetch("https://www.hoddit.com/api/query?limit=X");
+//top X posts are returned in ascending order by rate
+```
+Note: due to efficiency reasons, for now you should only make requests with limits of 10, 50, 100, 200, 250, 500, and 1000
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### all
+```javascript
+let data = await fetch("https://www.hoddit.com/api/query?all=true";
+//all posts from the database are returned in ascending order by rate
+```
+Note: this query will take a *long* time
 
-## Learn More
+#### nosort
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```javascript
+let data = await fetch("https://www.hoddit.com/api/query?nosort=true");
+//all posts from the database are returned with no sorting 
+```
+Note: this query will take a *long* time
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### subreddit
 
-### Code Splitting
+```javascript
+let data = await fetch("https://www.hoddit.com/api/query?subreddit=AskReddit");
+//top 50 posts from x subreddit will be returned in ascending order by rate
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### bounds
 
-### Analyzing the Bundle Size
+```javascript
+let data = await fetch("https://www.hoddit.com/api/query?bounds=x-y");
+//top x-y posts are returned in ascending order by rate
+```
+Note: this query has the same breakpoints as limit
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Contributing
 
-### Making a Progressive Web App
+Pull requests are welcome! For major changes, please open an issue to discuss what you would like to change.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Please make sure to update tests as appropriate.
 
-### Advanced Configuration
+## License 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
