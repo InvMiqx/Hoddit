@@ -17,9 +17,9 @@
 
 ## About Hoddit
 
-(Hoddit is down right now because I can't afford the server costs :D)
-
 Hoddit is a website that tracks the fastest growing reddit posts right now!
+
+(Note: Hoddit is down right now because I can't afford the server costs :D)
 
 ### What is hoddit for?
 
